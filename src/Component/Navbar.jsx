@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { NavLink, Link } from 'react-router';
 import { AuthContext } from '../Providers/AuthContext';
-import { LogOut } from 'lucide-react';
+import { LogIn, LogOut } from 'lucide-react';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -62,9 +62,9 @@ const Navbar = () => {
                 <NavLink
                     to="/"
                 >
-                   <div className='flex gap-1 items-center btn-ghost text-xl text-[#9F62F2] font-bold tracking-wide'>
-                    <img src="https://i.ibb.co.com/HL8J61bT/Plate-Share-removebg-preview.png" alt="" className='w-12 h-12' /> PlateShare
-                   </div>
+                    <div className='flex gap-1 items-center btn-ghost text-xl text-[#9F62F2] font-bold tracking-wide'>
+                        <img src="https://i.ibb.co.com/HL8J61bT/Plate-Share-removebg-preview.png" alt="" className='w-12 h-12' /> PlateShare
+                    </div>
                 </NavLink>
             </div>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
                                     My Food Requests
                                 </Link>
                             </li>
-            
+
                             <li className="border-t border-gray-300 mt-2 pt-2">
                                 <button
                                     onClick={handleLogout}
@@ -118,9 +118,9 @@ const Navbar = () => {
                 ) : (
                     <Link
                         to="/auth/login"
-                        className="px-5 py-2 rounded-md bg-[#9F62F2] text-white font-medium hover:bg-[#7c3aed] transition"
+                        className="px-3 py-2 rounded-md bg-[#9F62F2] text-white font-bold hover:bg-[#7c3aed] transition"
                     >
-                         Login
+                        <div className='flex gap-2 items-center'><LogIn></LogIn> Login</div>
                     </Link>
                 )}
             </div>
