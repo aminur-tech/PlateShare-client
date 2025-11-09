@@ -63,7 +63,7 @@ const Navbar = () => {
                     to="/"
                 >
                     <div className='flex gap-1 items-center btn-ghost text-xl text-[#9F62F2] font-bold tracking-wide'>
-                        <img src="https://i.ibb.co.com/HL8J61bT/Plate-Share-removebg-preview.png" alt="" className='w-12 h-12' /> PlateShare
+                        <img src="https://i.ibb.co.com/HL8J61bT/Plate-Share-removebg-preview.png" alt="" className='w-10 h-10' /> PlateShare
                     </div>
                 </NavLink>
             </div>
