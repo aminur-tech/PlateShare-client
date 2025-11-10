@@ -1,5 +1,6 @@
 import React from "react";
 import { CalendarDays, MapPin, Package } from "lucide-react";
+import { Link } from "react-router";
 
 const FoodCard = ({ food }) => {
   const {
@@ -11,6 +12,7 @@ const FoodCard = ({ food }) => {
     pickup_location,
     expire_date,
     food_status,
+    _id
   } = food;
 
   return (
@@ -73,9 +75,9 @@ const FoodCard = ({ food }) => {
         </div>
 
         {/* Button */}
-        <button className="mt-3 w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg">
+        <Link to={`/foods/${_id}`} className="btn mt-3 w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg">
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   );

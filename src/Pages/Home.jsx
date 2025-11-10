@@ -31,14 +31,14 @@ const Home = () => {
                 }
             </div>
             <div className='flex justify-center'>
-                <Link to='/available-foods' className='btn bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg'>Show All</Link>
+                <Link to='/available-foods' className='btn bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5  hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg hover:rounded-2xl'>Show All</Link>
             </div>
 
             <div className='mt-10 mb-10'>
                 <HowItWorks></HowItWorks>
             </div>
 
-            <div className='mt-16 mb-10'>
+            <div className='mt-16 mb-16'>
                 <OurMission></OurMission>
             </div>
         </div>

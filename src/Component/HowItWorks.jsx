@@ -5,7 +5,7 @@ const HowItWorks = () => {
   return (
     <section className="bg-base-200 py-16 px-6">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8 text-primary">How It Works</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-8">How It Works</h2>
         <p className="text-base-content/70 mb-12 max-w-2xl mx-auto">
           Sharing food has never been easier! Follow these three simple steps to
           connect with the community and reduce food waste.

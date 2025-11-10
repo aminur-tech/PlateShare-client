@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
 import FoodCard from '../Component/FoodCard';
 
 const AvailableFoods = () => {
@@ -21,6 +21,10 @@ const AvailableFoods = () => {
                 {
                     foods.map(food => <FoodCard food={food} key={food._id}></FoodCard>)
                 }
+            </div>
+            
+             <div className='flex justify-center mb-10'>
+                <Link to='/' className='btn bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5  hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg hover:rounded-2xl'>Go Home</Link>
             </div>
         </div>
     );

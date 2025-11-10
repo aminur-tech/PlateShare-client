@@ -27,7 +27,7 @@ const OurMission = () => {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
             Our Mission:{" "}
-            <span className="text-primary">Sharing Food, Spreading Smiles</span>
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Sharing Food, Spreading Smiles</span>
           </h2>
 
           <p className="text-lg text-gray-200/90 mb-10 leading-relaxed">
@@ -51,7 +51,7 @@ const OurMission = () => {
                 viewport={{ once: true }}
                 className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-xl hover:bg-white/20 hover:scale-[1.03] transition-transform duration-300"
               >
-                <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                <h3 className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent font-bold text-3xl mb-2">
                   {item.number}
                 </h3>
                 <p className="text-gray-200">{item.label}</p>
