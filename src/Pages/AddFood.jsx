@@ -22,7 +22,7 @@ const AddFood = () => {
     const newFood = {
       food_image: Image,
       food_name: name ,
-      food_quantity: quantity,
+      food_quantity: parseInt(quantity),
       pickup_location: location,
       expire_date: date,
       additional_notes: notes,
