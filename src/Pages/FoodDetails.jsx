@@ -1,18 +1,21 @@
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef } from 'react';
 import { useLoaderData } from 'react-router';
 import { CalendarDays, MapPin, Package } from 'lucide-react';
+import { toast } from 'react-toastify';
+import { AuthContext } from '../Providers/AuthContext';
+import useAxiosSecure from '../Hooks/UseAxiosSecure';
 
 const FoodDetails = () => {
     const food = useLoaderData();
     // console.log(food)
-
-    const [requestFood, setRequestFood] = useState()
     const requestModalRef = useRef()
-
+    const { user } = useContext(AuthContext)
+    const axiosSecure = useAxiosSecure()
     if (!food) return <p className="text-center mt-10 text-gray-500">Loading...</p>;
 
 
     const {
+        _id,
         food_image,
         food_name,
         donator_name,
@@ -29,9 +32,37 @@ const FoodDetails = () => {
         requestModalRef.current.showModal()
     }
 
-    const handleRequestSubmit = (e) => {
+    const handleRequestSubmit = async (e) => {
         e.preventDefault()
-    }
+        const form = e.target;
+        const location = form.location.value;
+        const needFood = form.needFood.value;
+        const contact = form.contact.value;
+
+        const newRequest = {
+            foodId : _id,
+            userEmail: user?.email,
+            userName: user?.displayName,
+            userPhoto: user?.photoURL,
+            location,
+            needFood,
+            contact,
+        };
+
+        try {
+            const res = await axiosSecure.post(`/food-request`, newRequest);
+            if (res.data.insertedId) {
+                toast.success("Request submitted successfully!");
+                form.reset();
+                requestModalRef.current.close();
+            } else {
+                toast.error("Something went wrong!");
+            }
+        } catch (error) {
+            console.error(error);
+            toast.error("Failed to submit request!");
+        }
+    };
 
     return (
         <div className="max-w-4xl mx-auto my-10 bg-white shadow-md rounded-2xl overflow-hidden">
@@ -115,13 +146,11 @@ const FoodDetails = () => {
                         {/* Location */}
                         <div>
                             <label
-                                htmlFor="location"
                                 className="block text-white font-semibold mb-2 tracking-wide"
                             >
                                 Your Location
                             </label>
                             <input
-                                id="location"
                                 name="location"
                                 className="input input-bordered w-full bg-white/90 text-gray-800 font-medium placeholder-gray-500 focus:ring-2 focus:ring-sky-400 focus:outline-none rounded-xl shadow-sm transition-all"
                                 placeholder="Enter your location"
@@ -132,13 +161,11 @@ const FoodDetails = () => {
                         {/* Why Need Food */}
                         <div>
                             <label
-                                htmlFor="needFood"
                                 className="block text-white font-semibold mb-2 tracking-wide"
                             >
                                 Why Do You Need Food?
                             </label>
                             <textarea
-                                id="needFood"
                                 name="needFood"
                                 className="textarea textarea-bordered w-full bg-white/90 text-gray-800 font-medium placeholder-gray-500 focus:ring-2 focus:ring-sky-400 focus:outline-none rounded-xl shadow-sm transition-all"
                                 placeholder="Explain briefly..."
@@ -150,13 +177,11 @@ const FoodDetails = () => {
                         {/* Contact */}
                         <div>
                             <label
-                                htmlFor="contact"
                                 className="block text-white font-semibold mb-2 tracking-wide"
                             >
                                 Your Contact Number
                             </label>
                             <input
-                                type="number"
                                 id="contact"
                                 name="contact"
                                 className="input input-bordered w-full bg-white/90 text-gray-800 font-medium placeholder-gray-500 focus:ring-2 focus:ring-sky-400 focus:outline-none rounded-xl shadow-sm transition-all"
