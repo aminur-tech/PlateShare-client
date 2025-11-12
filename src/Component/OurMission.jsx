@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 const OurMission = () => {
   return (
@@ -27,16 +28,43 @@ const OurMission = () => {
         >
           <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
             Our Mission:{" "}
-            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">Sharing Food, Spreading Smiles</span>
+            <span className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
+              Sharing Food, Spreading Smiles
+            </span>
           </h2>
 
-          <p className="text-lg text-gray-200/90 mb-10 leading-relaxed">
+          <p className="text-lg text-gray-200/90 mb-8 leading-relaxed">
             We’re on a mission to reduce food waste and hunger by connecting those
-            with extra food to those who need it most. Through community compassion
-            and care, we strive to create a world where no meal is wasted and
-            everyone has access to nourishment.
+            with extra food to those who need it most. Through compassion and care,
+            we strive to create a world where no meal is wasted and everyone has access
+            to nourishment.
           </p>
 
+          {/* ✨ Beautiful UL section */}
+          <motion.ul
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="space-y-4 mb-12"
+          >
+            {[
+              "Encourage community-driven food sharing.",
+              "Support sustainable and eco-friendly practices.",
+              "Promote compassion and equality through kindness.",
+              "Empower local donors to make a real difference.",
+            ].map((text, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 text-gray-200 hover:text-orange-400 transition-all duration-300"
+              >
+                <CheckCircle className="text-orange-500 w-6 h-6 flex-shrink-0 mt-1" />
+                <span>{text}</span>
+              </li>
+            ))}
+          </motion.ul>
+
+          {/* Stats Section */}
           <div className="grid sm:grid-cols-3 gap-6 mt-12 text-center">
             {[
               { number: "5K+", label: "Meals Shared" },
@@ -62,7 +90,7 @@ const OurMission = () => {
       </div>
 
       {/* Bottom Gradient Accent */}
-      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent"></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 via-red-500 to-orange-600"></div>
     </section>
   );
 };

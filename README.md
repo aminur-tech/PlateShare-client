@@ -1,12 +1,27 @@
-# React + Vite
+# 🍽️ PlateShare
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site URL:** https://community-food-sharing.netlify.app
 
-Currently, two official plugins are available:
+## 📖 About the Project
+**PlateShare** is a community-driven food-sharing platform where people can donate surplus food to those in need. It connects donors, volunteers, and recipients to reduce food waste and fight hunger.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Key Features
 
-## Expanding the ESLint configuration
+- 🍔 **Food Donation System:** Users can add, edit, and manage food donation listings easily.  
+- 🤝 **Request & Accept System:** Registered users can request available food and see real-time status updates.  
+- 🔒 **Secure Authentication:** Email/password and Google login system with Firebase authentication.  
+- 🕵️ **Responsive & Modern UI:** Fully responsive interface built with **React**, **Tailwind CSS**, and **DaisyUI** for a smooth user experience.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- **Frontend:** React.js, React Router, Tailwind CSS, DaisyUI  
+- **Authentication:** Firebase Authentication  
+- **Backend API:** Node.js, Express.js, MongoDB  
+- **Hosting:**  Netlify (client), Vercel (server)  
+
+## 🚀 Getting Started
+
+### Installation Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/aminur-tech/PlateShare-client

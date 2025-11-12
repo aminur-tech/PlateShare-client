@@ -15,11 +15,11 @@ const Home = () => {
                 <HeroSection></HeroSection>
             </div>
             {/* featured-foods */}
-            <div className='text-center mb-10 mt-12'>
-                <h2 className='text-3xl md:text-4xl font-bold text-gray-800 mb-3'>
+            <div className='text-center mb-10 mt-20'>
+                <h2 className='text-3xl md:text-4xl font-bold text-base-content mb-3'>
                     🍴 Featured Food Donations
                 </h2>
-                <p className='text-gray-600 max-w-2xl mx-auto text-sm md:text-base'>
+                <p className='text-base-content/70 max-w-2xl mx-auto text-sm md:text-base'>
                     Discover freshly prepared meals and surplus food generously donated by our community members.
                     Each item is available for pickup before its expiration date — helping reduce food waste and feed those in need.
                 </p>
@@ -34,11 +34,11 @@ const Home = () => {
                 <Link to='/available-foods' className='btn bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5  hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg hover:rounded-2xl'>Show All</Link>
             </div>
 
-            <div className='mt-10 mb-10'>
+            <div className='mt-20 mb-10'>
                 <HowItWorks></HowItWorks>
             </div>
 
-            <div className='mt-16 mb-16'>
+            <div className='mt-20 mb-20'>
                 <OurMission></OurMission>
             </div>
         </div>

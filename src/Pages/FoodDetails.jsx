@@ -157,7 +157,7 @@ const FoodDetails = () => {
         {user?.email !== donator_email && (
           <button
             onClick={handleOpenModal}
-            className="btn w-full mt-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
+            className="btn w-full border-0 mt-5 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg"
           >
             Request Food
           </button>
@@ -289,14 +289,14 @@ const FoodDetails = () => {
                       <td className="flex gap-2">
                         <button
                           onClick={() => handleStatusUpdate(req._id, "accepted")}
-                          className="btn btn-xs bg-green-500 text-white hover:bg-green-600"
+                          className="btn btn-xs bg-green-500 border-0 text-white hover:bg-green-600"
                           disabled={req.status !== "pending"}
                         >
                           Accept
                         </button>
                         <button
                           onClick={() => handleStatusUpdate(req._id, "rejected")}
-                          className="btn btn-xs bg-red-500 text-white hover:bg-red-600"
+                          className="btn btn-xs bg-red-500 border-0 text-white hover:bg-red-600"
                           disabled={req.status !== "pending"}
                         >
                           Reject

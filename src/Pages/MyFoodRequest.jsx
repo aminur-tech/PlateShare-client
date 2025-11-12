@@ -108,7 +108,7 @@ const MyFoodRequest = () => {
                                             <td className="py-3 px-4 text-center">
                                                 <button
                                                     onClick={() => handleRemoveRequest(req._id)}
-                                                    className="px-4 py-1.5 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-md transition"
+                                                    className="px-4 py-1.5 text-sm font-semibold text-white bg-gradient-to-r from-orange-500 to-orange-600 rounded-md  hover:from-orange-600 hover:to-orange-700 transition"
                                                 >
                                                     Remove
                                                 </button>
@@ -123,7 +123,7 @@ const MyFoodRequest = () => {
 
                 <div className="flex justify-center mt-10 mb-10">
                     <Link to='/'
-                        className="btn bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:rounded-2xl font-bold px-8"
+                        className="btn bg-gradient-to-r from-orange-500 to-orange-600 border-0 text-white hover:rounded-2xl font-bold px-8"
                     >
                         Back To Home
                     </Link>

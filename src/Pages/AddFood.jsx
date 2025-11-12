@@ -47,10 +47,7 @@ const AddFood = () => {
   return (
     <div
       className="min-h-screen bg-cover bg-center bg-no-repeat flex flex-col justify-center relative"
-      style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80')",
-      }}
+      
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-sky-900/70 via-black/60 to-sky-800/70 backdrop-blur-sm"></div>
@@ -108,7 +105,7 @@ const AddFood = () => {
               type="text"
               name="name"
               placeholder="Enter food name"
-              className="input input-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="input input-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all placeholder:text-base-content/50"
               required
             />
           </div>
@@ -119,7 +116,7 @@ const AddFood = () => {
               type="text"
               name="Image"
               placeholder="Enter image URL"
-              className="input input-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="input input-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all placeholder:text-base-content/50"
               required
             />
           </div>
@@ -130,7 +127,7 @@ const AddFood = () => {
               type="number"
               name="quantity"
               placeholder="e.g., Serves 4"
-              className="input input-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="input input-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all placeholder:text-base-content/50"
               required
             />
           </div>
@@ -141,7 +138,7 @@ const AddFood = () => {
               type="text"
               name="location"
               placeholder="Enter pickup location"
-              className="input input-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="input input-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all placeholder:text-base-content/50"
               required
             />
           </div>
@@ -151,7 +148,7 @@ const AddFood = () => {
             <input
               type="date"
               name="date"
-              className="input input-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="input input-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all placeholder:text-base-content/50"
               required
             />
           </div>
@@ -161,7 +158,7 @@ const AddFood = () => {
             <textarea
               name="notes"
               placeholder="Write any notes here..."
-              className="textarea textarea-bordered w-full bg-white/80 hover:bg-white focus:ring-2 focus:ring-sky-400 transition-all"
+              className="textarea textarea-bordered w-full focus:ring-2 focus:ring-sky-400 transition-all  placeholder:text-base-content/50:"
               required
             ></textarea>
           </div>
@@ -174,7 +171,7 @@ const AddFood = () => {
             >
               Cancel
             </Link>
-            <button className="btn bg-orange-500 hover:bg-orange-600 hover:rounded-2xl text-white font-semibold px-6">
+            <button className="btn border-0 bg-orange-500 hover:bg-orange-600 hover:rounded-2xl text-white font-semibold px-6">
               Add Food
             </button>
           </div>

@@ -100,7 +100,7 @@ const ManageMyFoods = () => {
                         You haven't added any foods yet.
                     </p>
                 ) : (
-                    <div className="overflow-x-auto shadow-lg rounded-xl bg-white">
+                    <div className="overflow-x-auto shadow-lg rounded-xl">
                         <table className="table w-full">
                             <thead className="bg-sky-600 text-white">
                                 <tr>
@@ -115,7 +115,7 @@ const ManageMyFoods = () => {
                             <tbody>
                                 {foods.map((food, index) => (
                                     <tr key={food._id} className="hover:bg-sky-50">
-                                        <td>{index + 1}</td>
+                                        <td className="font-semibold text-gray-700">{index + 1}</td>
                                         <td className="flex items-center gap-3">
                                             <img
                                                 src={food.food_image}
@@ -126,20 +126,20 @@ const ManageMyFoods = () => {
                                                 {food.food_name}
                                             </span>
                                         </td>
-                                        <td>{food.food_quantity}</td>
-                                        <td>{food.pickup_location}</td>
-                                        <td>{food.expire_date}</td>
+                                        <td className="font-semibold text-gray-700">{food.food_quantity}</td>
+                                        <td className="font-semibold text-gray-700">{food.pickup_location}</td>
+                                        <td className="font-semibold text-gray-700">{food.expire_date}</td>
                                         <td>
                                             <div className="flex gap-2">
                                                 <button
                                                     onClick={() => handleModalOpenBtn(food)}
-                                                    className="btn btn-sm bg-green-500 hover:bg-green-600 text-white"
+                                                    className="btn btn-sm bg-green-500 hover:bg-green-600 text-white border-0"
                                                 >
                                                     Update
                                                 </button>
                                                 <button
                                                     onClick={() => handleDelete(food._id)}
-                                                    className="btn btn-sm  bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold "
+                                                    className="btn btn-sm bg-gradient-to-r from-orange-500 to-orange-600 border-0 text-white font-bold transition-all duration-300 ease-in-out hover:from-orange-600 hover:to-orange-700 "
                                                 >
                                                     Delete
                                                 </button>
@@ -223,7 +223,7 @@ const ManageMyFoods = () => {
 
             <div className="flex justify-center mt-10 mb-10">
                 <Link to='/'
-                    className="btn bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:rounded-2xl font-bold px-8"
+                    className="btn bg-gradient-to-r from-orange-500 to-orange-600 border-0 text-white hover:rounded-2xl font-bold px-8"
                 >
                     Back To Home
                 </Link>

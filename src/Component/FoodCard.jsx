@@ -16,7 +16,7 @@ const FoodCard = ({ food }) => {
   } = food;
 
   return (
-    <div className="bg-white border border-gray-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-2xl overflow-hidden">
+    <div className="bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 rounded-2xl overflow-hidden">
       {/* Food Image */}
       <div className="relative">
         <img
@@ -75,7 +75,7 @@ const FoodCard = ({ food }) => {
         </div>
 
         {/* Button */}
-        <Link to={`/foods/${_id}`} className="btn mt-3 w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg">
+        <Link to={`/foods/${_id}`} className="btn mt-3 w-full border-0 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-semibold py-2.5 rounded-lg hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-md hover:shadow-lg">
           View Details
         </Link>
       </div>

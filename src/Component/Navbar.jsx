@@ -131,7 +131,7 @@ const Navbar = () => {
                     ) : (
                         <Link
                             to="/auth/login"
-                            className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:shadow-md hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 flex gap-2 items-center"
+                            className="px-4 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold hover:shadow-md hover:from-orange-600 hover:to-orange-700 transition-all duration-300 transform hover:rounded-full flex gap-2 items-center"
                         >
                             <LogIn size={18} /> Login
                         </Link>
