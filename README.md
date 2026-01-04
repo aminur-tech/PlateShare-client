@@ -1,7 +1,7 @@
 ## 🍽️ PlateShare
 
 **Live Site URLs:**  
-[https://community-food-sharing.netlify.app](https://community-food-sharing.netlify.app) | [https://platesharebd.netlify.app](https://platesharebd.netlify.app)
+https://plate-share-client-olive.vercel.app
 
 ### 📖 About the Project
 **PlateShare** is a community-driven food-sharing platform that helps reduce food waste and fight hunger. It connects donors, volunteers, and recipients, enabling surplus food to reach those in need efficiently.

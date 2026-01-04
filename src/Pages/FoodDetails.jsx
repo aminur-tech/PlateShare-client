@@ -3,7 +3,7 @@ import { CalendarDays, MapPin, Package, Clock, User, MessageSquare, Phone, Send 
 import { toast } from "react-toastify";
 import { motion, AnimatePresence } from "framer-motion";
 import { AuthContext } from "../Providers/AuthContext";
-import useAxiosSecure from "../Hooks/UseAxiosSecure";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 import { useParams } from "react-router";
 import FoodDetailsSkeleton from "../Component/FoodDetailsSkeleton";
 import { Link } from "react-router";
@@ -35,7 +35,7 @@ const FoodDetails = () => {
 
 
   useEffect(() => {
-    fetch(`https://plate-share-server-xi.vercel.app/foods/${id}`)
+    fetch(`http://localhost:3000/foods/${id}`)
       .then(res => res.json())
       .then(data => {
         setFood(data);

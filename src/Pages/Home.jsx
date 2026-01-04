@@ -5,13 +5,14 @@ import FoodCard from '../Component/FoodCard';
 import HowItWorks from '../Component/HowItWorks';
 import OurMission from '../Component/OurMission';
 import SkeletonCard from '../Component/SkeletonCard';
+import FAQSection from '../Component/FAQSection';
 
 const Home = () => {
   const [foods, setFoods] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleCount, setVisibleCount] = useState(4); 
   useEffect(() => {
-    fetch('https://plate-share-server-xi.vercel.app/foods')
+    fetch('http://localhost:3000/foods')
       .then(res => res.json())
       .then(data => {
         setFoods(data);
@@ -70,9 +71,15 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="mt-20">
         <div>
           <OurMission />
+        </div>
+      </section>
+
+      <section className='mb-20'>
+        <div>
+          <FAQSection/>
         </div>
       </section>
     </main>

@@ -26,21 +26,21 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 Component: Home,
-                // loader: () => fetch('https://plate-share-server-xi.vercel.app/featured-foods'),
+                // loader: () => fetch('http://localhost:3000/featured-foods'),
                 // HydrateFallback: Loading,
                 errorElement: <Error></Error>
             },
             {
                 path: '/available-foods',
                 Component: AvailableFoods,
-                // loader: () => fetch('https://plate-share-server-xi.vercel.app/foods'),
+                // loader: () => fetch('http://localhost:3000/foods'),
 
                 errorElement: <Error></Error>
             },
             {
                 path: '/foods/:id',
                 element: <FoodDetails></FoodDetails>,
-                // loader: ({ params }) => fetch(`https://plate-share-server-xi.vercel.app/foods/${params.id}`),
+                // loader: ({ params }) => fetch(`http://localhost:3000/foods/${params.id}`),
                 // HydrateFallback: Loading,
                 errorElement: <Error></Error>
             }

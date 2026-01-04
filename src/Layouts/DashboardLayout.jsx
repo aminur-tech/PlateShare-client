@@ -85,7 +85,7 @@ const DashboardLayout = () => {
       >
         <div className="w-64 h-full bg-base-100 shadow-xl">
           <div className="p-6 border-b flex justify-between items-center">
-            <h2 className="text-xl font-bold text-orange-500">Dashboard</h2>
+            <Link to={`/`} className="text-xl font-bold text-orange-500 flex items-center gap-2"><LayoutGrid />  Dashboard</Link>
             <button onClick={() => setIsMobileMenuOpen(false)}>
               <X />
             </button>

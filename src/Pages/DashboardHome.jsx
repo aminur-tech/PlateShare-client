@@ -11,12 +11,14 @@ import {
   Cell,
   ResponsiveContainer,
 } from "recharts";
-import useAxiosSecure from "../Hooks/UseAxiosSecure";
+
 import { AuthContext } from "../Providers/AuthContext";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const DashboardHome = () => {
   const { user } = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
+  const [foods, setFoods] = useState([]);
 
   const [stats, setStats] = useState({
     totalFoods: 0,
@@ -31,28 +33,45 @@ const DashboardHome = () => {
 
     const fetchStats = async () => {
       try {
-        const foodsRes = await axiosSecure.get(`/foods?userEmail=${user.email}`);
-        const requestsRes = await axiosSecure.get(`/food-request?userEmail=${user.email}`);
+        // 1️⃣ Get all foods of this donator
+        const foodsRes = await axiosSecure.get(
+          `/foods/donate?email=${user.email}`
+        );
+
+        const foodsData = foodsRes.data;
+
+        // 2️⃣ Get food requests related to this user
+        const requestsRes = await axiosSecure.get(
+          `/food-request?userEmail=${user.email}`
+        );
 
         const requests = requestsRes.data;
-        const accepted = requests.filter((r) => r.status === "accepted").length;
-        const rejected = requests.filter((r) => r.status === "rejected").length;
-        const pending = requests.filter((r) => !r.status || r.status === "pending").length;
 
+        // 3️⃣ Request status counts
+        const accepted = requests.filter(r => r.status === "accepted").length;
+        const rejected = requests.filter(r => r.status === "rejected").length;
+        const pending = requests.filter(
+          r => !r.status || r.status === "pending"
+        ).length;
+
+        // 4️⃣ Set everything safely
+        setFoods(foodsData);
         setStats({
-          totalFoods: foodsRes.data.length,
+          totalFoods: foodsData.length,
           totalRequests: requests.length,
           accepted,
           rejected,
           pending,
         });
-      } catch (err) {
-        console.error(err);
+
+      } catch (error) {
+        console.error("Dashboard error:", error);
       }
     };
 
     fetchStats();
   }, [user?.email, axiosSecure]);
+
 
   // Pie chart colors
   const COLORS = ["#10B981", "#F87171", "#FACC15"]; // accepted-green, rejected-red, pending-yellow
@@ -133,9 +152,18 @@ const DashboardHome = () => {
               <XAxis dataKey="name" stroke="#8884d8" />
               <YAxis />
               <Tooltip />
-              <Bar dataKey="value" fill="#FFA500" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="value" radius={[6, 6, 0, 0]}>
+                {[
+                  { name: "Accepted", value: stats.accepted },
+                  { name: "Rejected", value: stats.rejected },
+                  { name: "Pending", value: stats.pending },
+                ].map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Bar>
             </BarChart>
           </ResponsiveContainer>
+
         </div>
       </div>
     </div>

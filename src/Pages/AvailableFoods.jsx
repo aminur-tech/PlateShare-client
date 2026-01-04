@@ -14,7 +14,7 @@ const AvailableFoods = () => {
   const itemsPerPage = 6;
 
   useEffect(() => {
-    fetch("https://plate-share-server-xi.vercel.app/foods")
+    fetch("http://localhost:3000/foods")
       .then((res) => res.json())
       .then((data) => {
         setFoods(data);
@@ -54,21 +54,13 @@ const AvailableFoods = () => {
   );
 
   return (
-    <div className="px-4 md:px-8">
-      {/* Header */}
-      <div className="text-center mb-10 mt-10">
-        <h1 className="text-3xl md:text-4xl font-bold mb-3">
-          🍱 Available Foods for Donation
-        </h1>
-        <p className="max-w-2xl mx-auto text-sm md:text-base opacity-70">
-          Explore the list of available food items donated by kind-hearted individuals.
-        </p>
-      </div>
+    <div>
 
       {/* Layout */}
       <div className="flex flex-col md:flex-row gap-8">
+
         {/* LEFT PANEL */}
-        <div className="w-full md:w-1/5 space-y-6 md:sticky md:top-24 h-fit">
+        <div className="w-full md:w-1/4 space-y-6 md:sticky md:top-24 h-fit">
           <input
             type="text"
             placeholder="Search food..."
@@ -98,65 +90,78 @@ const AvailableFoods = () => {
         </div>
 
         {/* RIGHT PANEL */}
-        <div className="w-full md:w-4/5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {loading &&
-            Array.from({ length: 8 }).map((_, i) => (
-              <SkeletonCard key={i} />
-            ))}
+        <div className="w-full md:w-3/4 flex flex-col">
 
-          {!loading &&
-            currentFoods.map((food) => (
-              <FoodCard key={food._id} food={food} />
-            ))}
+          {/* Header */}
+          <div className="text-center mb-10 mt-10">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3">
+              🍱 Available Foods for Donation
+            </h1>
+            <p className="max-w-2xl mx-auto text-sm md:text-base opacity-70">
+              Explore the list of available food items donated by kind-hearted individuals.
+            </p>
+          </div>
 
-          {!loading && currentFoods.length === 0 && (
-            <h2 className="col-span-full text-2xl font-bold text-center opacity-60 mt-20">
-              No food items found.
-            </h2>
-          )}
-        </div>
-      </div>
+          {/* Food Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {loading &&
+              Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)}
 
-      {/* Pagination */}
-      {!loading && totalPages > 1 && (
-        <div className="flex justify-center gap-2 mt-12 flex-wrap">
-          <button
-            onClick={() => setCurrentPage((p) => p - 1)}
-            className="btn btn-sm"
-            disabled={currentPage === 1}
-          >
-            Prev
-          </button>
+            {!loading &&
+              currentFoods.map((food) => <FoodCard key={food._id} food={food} />)}
 
-          {Array.from({ length: totalPages }, (_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrentPage(i + 1)}
-              className={`btn btn-sm ${
-                currentPage === i + 1 ? "btn-active bg-orange-500 text-white" : ""
-              }`}
+            {!loading && currentFoods.length === 0 && (
+              <h2 className="col-span-full text-2xl font-bold text-center opacity-60 mt-20">
+                No food items found.
+              </h2>
+            )}
+          </div>
+
+          {/* Go Home */}
+          <div className="flex justify-center my-10">
+            <Link
+              to="/"
+              className="btn bg-orange-500 text-white hover:bg-orange-600 border-0 px-8"
             >
-              {i + 1}
-            </button>
-          ))}
+              Go Home
+            </Link>
+          </div>
 
-          <button
-            onClick={() => setCurrentPage((p) => p + 1)}
-            className="btn btn-sm"
-            disabled={currentPage === totalPages}
-          >
-            Next
-          </button>
+          {/* Pagination */}
+          {!loading && totalPages > 1 && (
+            <div className="flex justify-center gap-2 mt-12 flex-wrap">
+              <button
+                onClick={() => setCurrentPage((p) => p - 1)}
+                className="btn btn-sm"
+                disabled={currentPage === 1}
+              >
+                Prev
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentPage(i + 1)}
+                  className={`btn btn-sm ${currentPage === i + 1 ? "btn-active bg-orange-500 text-white" : ""}`}
+                >
+                  {i + 1}
+                </button>
+              ))}
+
+              <button
+                onClick={() => setCurrentPage((p) => p + 1)}
+                className="btn btn-sm"
+                disabled={currentPage === totalPages}
+              >
+                Next
+              </button>
+            </div>
+          )}
+
         </div>
-      )}
-
-      {/* Go Home */}
-      <div className="flex justify-center my-10">
-        <Link to="/" className="btn bg-orange-500 text-white hover:bg-orange-600 border-0 px-8">
-          Go Home
-        </Link>
       </div>
     </div>
+
   );
 };
 

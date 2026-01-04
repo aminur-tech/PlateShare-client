@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import useAxiosSecure from "../Hooks/UseAxiosSecure";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 import { AuthContext } from "../Providers/AuthContext";
 import { toast } from "react-toastify";
 import { Link } from "react-router";

@@ -5,7 +5,7 @@ import { AuthContext } from '../Providers/AuthContext';
 
 
 const Instance = axios.create({
-    baseURL: 'https://plate-share-server-xi.vercel.app'
+    baseURL: 'http://localhost:3000'
 })
 
 const useAxiosSecure = () => {

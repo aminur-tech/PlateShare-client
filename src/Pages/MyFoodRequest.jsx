@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Providers/AuthContext';
-import useAxiosSecure from '../Hooks/UseAxiosSecure';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 import { Link } from 'react-router';
 
 const MyFoodRequest = () => {

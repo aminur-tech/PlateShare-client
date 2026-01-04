@@ -12,7 +12,7 @@ import {
 
 const OurMission = () => {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28 bg-slate-900">
+    <section id="our-mission" className="relative overflow-hidden py-20 lg:py-28 bg-slate-900">
       {/* Background with optimized overlay */}
       <div className="absolute inset-0 z-0">
         <img 
