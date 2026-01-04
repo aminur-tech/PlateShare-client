@@ -15,6 +15,7 @@ import FoodDetails from '../Pages/FoodDetails';
 import AddFood from '../Pages/AddFood';
 import DashboardLayout from '../Layouts/DashboardLayout';
 import DashboardHome from '../Pages/DashboardHome';
+import MyProfile from '../Pages/MyProfile';
 
 
 
@@ -77,7 +78,14 @@ export const router = createBrowserRouter([
                     <PrivateRoutes>
                         <MyFoodRequest></MyFoodRequest>
                     </PrivateRoutes>
-            }
+            },
+            {
+                path: 'my-profile',
+                element:
+                    <PrivateRoutes>
+                        <MyProfile/>
+                    </PrivateRoutes>
+            },
         ])
     },
     {

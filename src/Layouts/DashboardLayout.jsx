@@ -16,6 +16,7 @@ import {
   ChevronDown,
   LogOut,
 } from "lucide-react";
+import { FaRegUser } from "react-icons/fa6";
 import { AuthContext } from "../Providers/AuthContext";
 
 const DashboardLayout = () => {
@@ -30,6 +31,7 @@ const DashboardLayout = () => {
     { name: "Add Food", path: "add-food", icon: <PlusCircle size={20} /> },
     { name: "Manage My Foods", path: "manage-my-foods", icon: <Settings size={20} /> },
     { name: "My Food Request", path: "my-food-request", icon: <ClipboardList size={20} /> },
+    { name: "My Profile", path: "my-profile", icon: <FaRegUser size={20} /> },
   ];
 
   // close profile dropdown on outside click
